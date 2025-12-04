@@ -1,7 +1,7 @@
-/* 
-  2 TIPOS DE PROMPTS
-  SYSTEM PROMPT - INTRUÇÕES PARA A IA
-  USER PROMPT - INFORMAÇÕES DO USUÁRIO PARA A IA
+/*
+  2 TIPOS DE PROMPT
+  SYSTEM PROMPT - INSTRUÇÕES PARA A IA
+  USER PROMPT - INFORMAÇÕES PARA A IA
   DOCS SYSTEM PROMPT - INSTRUÇÕES PARA A IA
 */
 
@@ -15,11 +15,11 @@ export function buildSystemPrompt() {
     - Use # para títulos e - para itens de lista.
     - A dieta deve conter exatamente 7 dias.
     - Cada dia deve ter 4 refeições fixas: café_da_manhã, almoço, lanche, jantar.
-    - SEMPRE incluia ingredientes comuns no Brasil.
+    - SEMPRE inclua ingredientes comuns no Brasil.
     - NUNCA inclua calorias e macros de cada refeição, apenas as refeições.
     - Evite alimentos ultraprocessados.
-    - Não responder em JSON ou outro formato, apenas texto markdown legível para humanos.
-    - Não inclua dicas como: bom consultar um nutricionista para um acompanhamento mais personalizado.`,
+    - Não responda em JSON ou outro formato, apenas texto markdown legível para humanos.
+    - Não inclua dicas como: bom consultar um nutricionista para um acompanhamento mais personalizado`,
   ].join("\n");
 }
 
@@ -31,11 +31,11 @@ export function buildUserPrompt(input: DietPlanRequest) {
     `- Altura em cm: ${input.altura_cm}`,
     `- Peso em kg: ${input.peso_kg}`,
     `- Sexo: ${input.sexo}`,
-    `- Nível de atividade: ${input.nivel_atividade}`,
+    `- Nivel de atividade: ${input.nivel_atividade}`,
     `- Objetivo: ${input.objetivo}`,
   ].join("\n");
 }
 
 export function buildDocsSystemPrompt(doc: string) {
-  return `Documento tecnico para ajudar na geração de dietas: ${doc}`;
+  return `Documento técnico para ajudar na geração de dietas: ${doc}`;
 }
