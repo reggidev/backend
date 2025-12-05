@@ -4,12 +4,9 @@
   USER PROMPT - INFORMAÇÕES PARA A IA
   DOCS SYSTEM PROMPT - INSTRUÇÕES PARA A IA
 */
-
-import type { DietPlanRequest } from "./types.js";
-
 export function buildSystemPrompt() {
-  return [
-    `Você é Nutri-AI, um agente de nutrição que cria planos semanais de dietas.
+    return [
+        `Você é Nutri-AI, um agente de nutrição que cria planos semanais de dietas.
     Regras fixas:
     - Sempre responda em texto markdown legível para humanos.
     - Use # para títulos e - para itens de lista.
@@ -20,22 +17,21 @@ export function buildSystemPrompt() {
     - Evite alimentos ultraprocessados.
     - Não responda em JSON ou outro formato, apenas texto markdown legível para humanos.
     - Não inclua dicas como: bom consultar um nutricionista para um acompanhamento mais personalizado`,
-  ].join("\n");
+    ].join("\n");
 }
-
-export function buildUserPrompt(input: DietPlanRequest) {
-  return [
-    "Gere um plano alimentar personalizado com base nos dados:",
-    `- Nome: ${input.nome}`,
-    `- Idade: ${input.idade}`,
-    `- Altura em cm: ${input.altura_cm}`,
-    `- Peso em kg: ${input.peso_kg}`,
-    `- Sexo: ${input.sexo}`,
-    `- Nivel de atividade: ${input.nivel_atividade}`,
-    `- Objetivo: ${input.objetivo}`,
-  ].join("\n");
+export function buildUserPrompt(input) {
+    return [
+        "Gere um plano alimentar personalizado com base nos dados:",
+        `- Nome: ${input.nome}`,
+        `- Idade: ${input.idade}`,
+        `- Altura em cm: ${input.altura_cm}`,
+        `- Peso em kg: ${input.peso_kg}`,
+        `- Sexo: ${input.sexo}`,
+        `- Nivel de atividade: ${input.nivel_atividade}`,
+        `- Objetivo: ${input.objetivo}`,
+    ].join("\n");
 }
-
-export function buildDocsSystemPrompt(doc: string) {
-  return `Documento técnico para ajudar na geração de dietas: ${doc}`;
+export function buildDocsSystemPrompt(doc) {
+    return `Documento técnico para ajudar na geração de dietas: ${doc}`;
 }
+//# sourceMappingURL=prompt.js.map

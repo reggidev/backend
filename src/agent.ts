@@ -1,6 +1,6 @@
 import OpenAI from "openai";
-import { buildSystemPrompt, buildUserPrompt, buildDocsSystemPrompt } from './prompt'
-import type { DietPlanRequest } from './types'
+import { buildSystemPrompt, buildUserPrompt, buildDocsSystemPrompt } from './prompt.js'
+import type { DietPlanRequest } from './types.js'
 import fs from 'fs';
 
 const client = new OpenAI({
